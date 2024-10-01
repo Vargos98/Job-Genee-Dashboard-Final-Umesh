@@ -10,11 +10,11 @@ const sections = [
   "Education Details",
   "Online Presence",
   "Skills",
-  "Courses & Certifications",
+  "Certifications",
   "Projects",
   "Awards & Achievements",
   "Personal Details",
-  "Languages",
+  
 ];
 
 const Navbar = () => {
@@ -79,7 +79,7 @@ const Navbar = () => {
       </div>
 
       {/* Navbar */}
-      <nav className="sticky top-0 flex overflow-x-auto whitespace-nowrap bg-zinc-400 p-2 space-x-4 border-b border-white-700 custom-scrollbar z-10">
+      <nav className="sticky top-0 flex overflow-x-auto whitespace-nowrap bg-zinc-400 p-2 space-x-4 border-b border-white-700 custom-scrollbar z-10 items-center justify-center">
         {trail.map((style, index) => (
           <animated.button
             key={sections[index]}
