@@ -24,21 +24,21 @@ const ResumeUploadModal = ({ isOpen, onClose, handleUpload }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      {/* Updated modal size */}
-      <div className="bg-white p-8 rounded-lg w-[600px] h-fit">
-        <h2 className="text-2xl font-semibold mb-6">Upload Resume</h2>
+    <div className="fixed inset-0 bg-black rounded-full bg-opacity-50 flex justify-center items-center z-50 drop-shadow-2xl">
+      {/* Updated modal to be full screen */}
+      <div className="bg-white p-8 rounded-3xl w-full h-full flex flex-col justify-center items-center">
+        <h2 className="text-4xl font-bold mb-8">Upload Resume</h2>
         <input 
           type="file" 
           accept=".pdf,.doc,.docx" 
           onChange={handleFileChange} 
-          className="mb-6 w-full border border-gray-300 rounded p-2"
+          className="mb-8 w-3/4 border border-gray-400 rounded p-4 text-lg"
         />
-        <div className="flex justify-end">
-          <button className="bg-gray-400 text-white px-4 py-2 rounded mr-2" onClick={onClose}>
+        <div className="flex justify-center">
+          <button className="bg-gray-400 text-white px-6 py-1 rounded-full mr-4 text-lg hover:bg-gray-700" onClick={onClose}>
             Cancel
           </button>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded" onClick={handleUploadClick}>
+          <button className="bg-blue-500 text-white px-6 py-1 rounded-full text-lg hover:bg-blue-800" onClick={handleUploadClick}>
             Upload
           </button>
         </div>
@@ -83,14 +83,14 @@ const ResumeBuilder = () => {
         </div>
       </div>
       <div className="flex">
-        <button
-          className="bg-zinc-200 hover:bg-gray-100 text-gray-800 font-semibold m-2 px-3 py-1 rounded-3xl border border-gray-400"
+      <button
+          className="bg-yellow-400 hover:bg-green-700 hover:text-white text-gray-800 font-semibold m-2 px-4 py-1 rounded-3xl border-none hover:drop-shadow-xl" 
           onClick={() => setIsModalOpen(true)} // Open modal on click
         >
-          Upload
+          Upload 
         </button>
         <button
-          className="bg-zinc-200 hover:bg-gray-100 text-gray-800 font-semibold m-2 px-3 py-1 rounded-3xl border border-gray-400"
+          className="bg-gray-900 hover:bg-gray-100 hover:text-gray-900 text-gray-200 font-semibold m-2 px-4 py-1 rounded-3xl border-none text-nowrap hover:drop-shadow-xl"
           onClick={handleDownload} // Handle download
         >
           Download

@@ -24,21 +24,21 @@ const CoverLetterUploadModal = ({ isOpen, onClose, handleUpload }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      {/* Updated modal size */}
-      <div className="bg-white p-8 rounded-lg w-[600px] h-fit">
-        <h2 className="text-2xl font-semibold mb-6 text-nowrap">Upload Cover Letter</h2>
+    <div className="fixed inset-0 bg-black rounded-full bg-opacity-50 flex justify-center items-center z-50 drop-shadow-2xl">
+      {/* Updated modal to be full screen */}
+      <div className="bg-white p-8 rounded-3xl w-full h-full flex flex-col justify-center items-center">
+        <h2 className="text-4xl font-bold mb-8 text-nowrap">Upload Cover Letter</h2>
         <input 
           type="file" 
           accept=".pdf,.doc,.docx" 
           onChange={handleFileChange} 
-          className="mb-6 w-full border border-gray-300 rounded p-2"
+          className="mb-8 w-3/4 border border-gray-400 rounded p-4 text-lg"
         />
-        <div className="flex justify-end">
-          <button className="bg-gray-400 text-white px-4 py-2 rounded mr-2" onClick={onClose}>
+        <div className="flex justify-center">
+          <button className="bg-gray-400 text-white px-6 py-1 rounded-full mr-4 text-lg hover:bg-gray-700" onClick={onClose}>
             Cancel
           </button>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded" onClick={handleUploadClick}>
+          <button className="bg-blue-500 text-white px-6 py-1 rounded-full text-lg hover:bg-blue-800" onClick={handleUploadClick}>
             Upload
           </button>
         </div>
@@ -46,6 +46,8 @@ const CoverLetterUploadModal = ({ isOpen, onClose, handleUpload }) => {
     </div>
   );
 };
+
+// Main Cover Letter Component
 const Coverletter = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [uploadedCoverLetter, setUploadedCoverLetter] = useState(null);
@@ -70,25 +72,25 @@ const Coverletter = () => {
   };
 
   return (
-    <div className="max-w-lg rounded-[40px] overflow-hidden shadow-lg bg-blue-500 p-8 flex justify-between items-center flex-col mb-4 ml-3">
+    <div className="max-w-lg rounded-[40px] overflow-hidden shadow-lg bg-teal-600 p-8 flex justify-between items-center flex-col mb-4 ml-3">
       <div className="flex items-center">
         <img src={coverletterImage} alt="Cover Letter Icon" className="w-24 mr-4" />
         <div>
           <h2 className="text-2xl font-bold text-white">Cover Letter</h2>
-          <p className="text-white font-semibold mt-2">
-          Impress recruiters with a breathtaking cover letter that showcases your hidden talents!
+          <p className="text-white font-semibold mt-2 leading-tight">
+            Impress recruiters with a breathtaking cover letter to showcase your hidden talents!
           </p>
         </div>
       </div>
       <div className="flex">
         <button
-          className="bg-zinc-200 hover:bg-gray-100 text-gray-800 font-semibold m-2 px-3 py-1 rounded-3xl border border-gray-400 text-nowrap"
+          className="bg-yellow-400 hover:bg-blue-700 hover:text-white text-gray-800 font-semibold m-2 px-4 py-1 rounded-3xl border-none hover:drop-shadow-xl"
           onClick={() => setIsModalOpen(true)} // Open modal on click
         >
           Upload 
         </button>
         <button
-          className="bg-zinc-200 hover:bg-gray-100 text-gray-800 font-semibold m-2 px-3 py-1 rounded-3xl border border-gray-400 text-nowrap"
+          className="bg-gray-900 hover:bg-gray-100 hover:text-gray-900 text-gray-200 font-semibold m-2 px-4 py-1 rounded-3xl border-none text-nowrap hover:drop-shadow-xl"
           onClick={handleDownload} // Handle download
         >
           Download
