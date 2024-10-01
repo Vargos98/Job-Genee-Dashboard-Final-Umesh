@@ -25,9 +25,15 @@ const CoverLetterUploadModal = ({ isOpen, onClose, handleUpload }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white p-6 rounded-lg w-[400px] h-fit">
-        <h2 className="text-xl font-semibold mb-4">Upload Cover Letter</h2>
-        <input type="file" accept=".pdf,.doc,.docx" onChange={handleFileChange} className="mb-4" />
+      {/* Updated modal size */}
+      <div className="bg-white p-8 rounded-lg w-[600px] h-fit">
+        <h2 className="text-2xl font-semibold mb-6 text-nowrap">Upload Cover Letter</h2>
+        <input 
+          type="file" 
+          accept=".pdf,.doc,.docx" 
+          onChange={handleFileChange} 
+          className="mb-6 w-full border border-gray-300 rounded p-2"
+        />
         <div className="flex justify-end">
           <button className="bg-gray-400 text-white px-4 py-2 rounded mr-2" onClick={onClose}>
             Cancel
@@ -40,7 +46,6 @@ const CoverLetterUploadModal = ({ isOpen, onClose, handleUpload }) => {
     </div>
   );
 };
-
 const Coverletter = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [uploadedCoverLetter, setUploadedCoverLetter] = useState(null);

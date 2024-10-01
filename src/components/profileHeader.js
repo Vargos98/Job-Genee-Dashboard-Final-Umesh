@@ -5,7 +5,7 @@ import profile from '../Assets/little-girl.png';
 const Modal = ({ isOpen, onClose, userDetails, handleChange, handleSave, handleProfilePicUpload }) => {
   if (!isOpen) return null;
 
-  return (
+ return  (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white p-6 rounded-lg w-[600px] h-[fit-content]">
         <h2 className="text-xl font-semibold mb-4">Edit Profile</h2>
@@ -17,7 +17,7 @@ const Modal = ({ isOpen, onClose, userDetails, handleChange, handleSave, handleP
             onChange={handleProfilePicUpload}
             className="mb-4"
           />
-          <label htmlFor="name" className="font-medium">Enter Full Name</label>
+          <label htmlFor="name" className="font-medium mt-4 text-nowrap">Enter Full Name</label>
           <input
             type="text"
             name="name"
@@ -104,13 +104,13 @@ const ProfileHeader = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [profilePic, setProfilePic] = useState(profile);
   const [userDetails, setUserDetails] = useState({
-    name: "Lakshya Bhardwaj",
+    name: "Carls Berg",
     role: "Full Stack Developer",
-    location: "Bhubaneswar",
+    location: "California",
     company: "Luytens Technology Solutions",
     experience: "2.9 Years",
-    phone: "+91 82342093205",
-    email: "labhansh40527@gmail.com",
+    phone: "+1 1000000000",
+    email: "lCarlsberg@gmail.com",
   });
 
   // Handle profile picture upload (using the file as is)

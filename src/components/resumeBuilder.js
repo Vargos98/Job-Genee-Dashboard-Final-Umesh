@@ -25,9 +25,15 @@ const ResumeUploadModal = ({ isOpen, onClose, handleUpload }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white p-6 rounded-lg w-[400px] h-fit">
-        <h2 className="text-xl font-semibold mb-4">Upload Resume</h2>
-        <input type="file" accept=".pdf,.doc,.docx" onChange={handleFileChange} className="mb-4" />
+      {/* Updated modal size */}
+      <div className="bg-white p-8 rounded-lg w-[600px] h-fit">
+        <h2 className="text-2xl font-semibold mb-6">Upload Resume</h2>
+        <input 
+          type="file" 
+          accept=".pdf,.doc,.docx" 
+          onChange={handleFileChange} 
+          className="mb-6 w-full border border-gray-300 rounded p-2"
+        />
         <div className="flex justify-end">
           <button className="bg-gray-400 text-white px-4 py-2 rounded mr-2" onClick={onClose}>
             Cancel
@@ -41,6 +47,7 @@ const ResumeUploadModal = ({ isOpen, onClose, handleUpload }) => {
   );
 };
 
+// Main Resume Builder Component
 const ResumeBuilder = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [uploadedResume, setUploadedResume] = useState(null);
@@ -71,7 +78,7 @@ const ResumeBuilder = () => {
         <div>
           <h2 className="text-2xl font-bold text-white">Upload Resume</h2>
           <p className="text-white font-semibold mt-2">
-          Upload an impressive resume so that you can stand out from the competition!
+            Upload an impressive resume so that you can stand out from the competition!
           </p>
         </div>
       </div>
@@ -80,7 +87,7 @@ const ResumeBuilder = () => {
           className="bg-zinc-200 hover:bg-gray-100 text-gray-800 font-semibold m-2 px-3 py-1 rounded-3xl border border-gray-400"
           onClick={() => setIsModalOpen(true)} // Open modal on click
         >
-          Upload 
+          Upload
         </button>
         <button
           className="bg-zinc-200 hover:bg-gray-100 text-gray-800 font-semibold m-2 px-3 py-1 rounded-3xl border border-gray-400"
