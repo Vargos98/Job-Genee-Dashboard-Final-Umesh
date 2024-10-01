@@ -1,0 +1,124 @@
+/* Add margins to the entire form to create space around the page */
+form {
+    margin: 2em; /* Adjust this value to control the margin */
+    max-width: 800px; /* Set a maximum width for the form */
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25em; /* Gap between the fields */
+    margin-bottom: 1.25em; /* Space below each row */
+}
+
+/* Column and Floating Label */
+.form-row .floating-label {
+    flex: 1 1 100%; /* Make sure it fills the available space */
+    min-width: 100%; /* Full width */
+    box-sizing: border-box;
+}
+
+.floating-label {
+    position: relative;
+    margin-bottom: 1.25em; /* Margin below each field */
+}
+
+.floating-label input,
+.floating-label textarea,
+.floating-label .datepicker-input {
+    width: 100%; /* Full width */
+    padding: 0.75em 0.625em; /* Padding */
+    font-size: 1em; /* Font size */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 0.25em; /* Border radius */
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.floating-label input:focus,
+.floating-label textarea:focus,
+.floating-label .datepicker-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Label Styling */
+.floating-label label {
+    position: absolute;
+    top: 50%;
+    left: 0.625em; /* Label position */
+    transform: translateY(-50%);
+    font-size: 1em; /* Font size */
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Active label styles */
+.floating-label input:focus ~ label,
+.floating-label textarea:focus ~ label,
+.floating-label .datepicker-input:focus ~ label,
+.floating-label input:not(:placeholder-shown) ~ label,
+.floating-label textarea:not(:placeholder-shown) ~ label 
+.floating-label .datepicker-input:not(:placeholder-shown) ~ label {
+    top: -0.625em; /* -10px */
+    left: 0.625em; /* 10px */
+    font-size: 0.75em; /* 12px */
+    color: #007bff;
+}
+
+.floating-label .active {
+    top: -0.625em; /* Adjusted top */
+    left: 0.625em; /* Adjusted left */
+    font-size: 0.75em; /* Smaller font size */
+    color: #007bff; /* Active color */
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25em; /* 20px */
+}
+
+.checkbox-label input {
+    margin-right: 0.625em; /* 10px */
+}
+
+/* Submit Button */
+.submit-button {
+    padding: 0.625em 1.25em; /* Padding */
+    font-size: 1em; /* Font size */
+    background-color: #007bff; /* Background color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 0.25em; /* Border radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Quill Editor Container */
+.floating-label .ql-container {
+    border: 1px solid #ccc; /* Border for Quill container */
+    border-radius: 0.25em; /* Border radius */
+    width: 100%; /* Full width */
+    box-sizing: border-box;
+    min-height: 12.5em;
+    margin: 0 auto; /* Center align if desired */
+}
+
+/* Quill Editor Content */
+.floating-label .ql-editor {
+    min-height: 12.5em; /* Minimum height */
+    width: 100%; /* Full width */
+    padding: 0.75em 0.625em; /* Padding */
+    box-sizing: border-box;
+}
+
+/* Error Message Styling */
+.error-message {
+    color: red;
+}
