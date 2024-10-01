@@ -45,12 +45,12 @@ const ProfileOverview = () => {
           onChange={(content) => handleChange(fieldName, content)}
           className=""
           placeholder={`Enter ${label.toLowerCase()}`}
-          style={{ height: '160px', marginBottom: '10px' }}  
+          style={{ height: '160px', marginBottom: '10px' }}
         />
       ) : (
         <div dangerouslySetInnerHTML={{ __html: savedData[fieldName] }} />
       )}
-      {editMode ? (null): (<div className="w-full h-[2px] bg-zinc-500 mt-3"></div>)}
+      {editMode ? (null) : (<div className="w-full h-[2px] bg-zinc-500 mt-3"></div>)}
     </div>
   );
 
@@ -66,20 +66,37 @@ const ProfileOverview = () => {
 
         <div className="md:col-span-2">
           <div className="grid grid-cols-2 gap-4">
-            <ResumeBuilder />
-            <Coverletter />
+            {/* Animate ResumeBuilder and Coverletter sliding in from the right */}
+            <div className="transform translate-x-full opacity-0 animate-slide-in-right">
+              <ResumeBuilder />
+            </div>
+            <div className="transform translate-x-full opacity-0 animate-slide-in-right">
+              <Coverletter />
+            </div>
           </div>
 
           <div className="container mx-auto p-4">
             <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
-              {renderSection("Profile Summary", "profileSummary")}
-              {renderSection("Education Details", "educationDetails")}
-              {renderSection("Work Experience", "workExperience")}
-              {renderSection("Certifications", "Certifications")}
-              {renderSection("Projects", "projects")}
-              {renderSection("Awards & Achievements", "awardsAchievements")}
+              {/* Animate sections to fade in from the bottom, one by one */}
+              <div className="transform translate-y-4 opacity-0 animate-fade-in-up delay-100">
+                {renderSection("Profile Summary", "profileSummary")}
+              </div>
+              <div className="transform translate-y-4 opacity-0 animate-fade-in-up delay-200">
+                {renderSection("Education Details", "educationDetails")}
+              </div>
+              <div className="transform translate-y-4 opacity-0 animate-fade-in-up delay-300">
+                {renderSection("Work Experience", "workExperience")}
+              </div>
+              <div className="transform translate-y-4 opacity-0 animate-fade-in-up delay-400">
+                {renderSection("Certifications", "Certifications")}
+              </div>
+              <div className="transform translate-y-4 opacity-0 animate-fade-in-up delay-500">
+                {renderSection("Projects", "projects")}
+              </div>
+              <div className="transform translate-y-4 opacity-0 animate-fade-in-up delay-600">
+                {renderSection("Awards & Achievements", "awardsAchievements")}
+              </div>
             </div>
-
             <div className="flex justify-center mt-4">
               {editMode ? (
                 <button
