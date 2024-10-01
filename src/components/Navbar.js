@@ -37,7 +37,7 @@ const Navbar = () => {
   const [trail, api] = useTrail(sections.length, () => ({
     from: { opacity: 0, transform: 'translateY(-20px)' },
     to: { opacity: 1, transform: 'translateY(0)' },
-    delay: 200,
+    delay: 50,
   }));
 
   useEffect(() => {
@@ -68,23 +68,23 @@ const Navbar = () => {
   return (
     <div>
       {/* First Div with animations */}
-      <div className='w-full bg-zinc-50 h-[120px] flex items-start justify-between '>
+      <div className='w-full bg-zinc-950 h-[120px] flex items-start justify-between  '>
         <animated.div style={leftDivAnim}>
-          <img src={JobGene} alt="" className='w-60' />
+          <img src={JobGene} alt="" className='w-64 drop-shadow-2xl mb-5' />
         </animated.div>
         <animated.div style={rightDivAnim} className='flex items-center mt-8 flex-col mr-24'>
-          <img src={Company_Logo} alt="" className='w-16 ' />
-          <h1 className='text-1xl font-semibold'>Powered by LTS</h1>
+          <img src={Company_Logo} alt="" className='w-16 drop-shadow-2xl' />
+          <h1 className='text-1xl text-white font-semibold'>Powered by LTS</h1>
         </animated.div>
       </div>
 
       {/* Navbar */}
-      <nav className="sticky top-0 flex overflow-x-auto whitespace-nowrap bg-white p-2 space-x-4 border-b border-white-700 custom-scrollbar z-10">
+      <nav className="sticky top-0 flex overflow-x-auto whitespace-nowrap bg-zinc-400 p-2 space-x-4 border-b border-white-700 custom-scrollbar z-10">
         {trail.map((style, index) => (
           <animated.button
             key={sections[index]}
             style={style} // Apply trail animation to each nav button
-            className={`text-black text-sm font-medium px-4 py-2 rounded-md hover:bg-blue-200 ${
+            className={`text-black text-sm font-medium px-4 py-2 rounded-md hover:bg-black hover:text-white  transition-all ${
               activeSection === sections[index].toLowerCase().replace(/\s+/g, '-') ? 'bg-blue-700' : ''
             }`}
             onClick={() => handleClick(sections[index].toLowerCase().replace(/\s+/g, '-'))}

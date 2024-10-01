@@ -93,7 +93,7 @@ const LinkSection = () => {
 
       <div className="flex justify-center mt-4">
         <button
-          className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600"
+          className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition-all"
           onClick={handleSave} // Save button
         >
           Save Links
@@ -145,11 +145,11 @@ const SkillSection = () => {
           {skills.map((skill, index) => (
             <span
               key={index}
-              className="bg-green-200 text-blue-800 px-3 py-1 rounded-full text-sm select-none cursor-pointer flex items-center"
+              className="bg-green-200 text-blue-800 px-3 py-1 rounded-full text-sm select-none cursor-pointer flex items-center transition-all"
             >
               {skill}
               <button
-                className="ml-2 text-red-500 hover:text-red-700 text-1xl"
+                className="ml-2 text-red-500 hover:text-red-700 text-1xl transition-all"
                 onClick={() => handleDeleteSkill(index)}
               >
                 &times; {/* This is the cross symbol */}
@@ -169,7 +169,7 @@ const SkillSection = () => {
           className="p-2 w-full border rounded mb-2"
         />
         <button
-          className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600"
+          className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition-all"
           onClick={handleSaveSkill}
         >
           Save Skill
@@ -224,11 +224,11 @@ const LanguageSection = () => {
           {languages.map((language, index) => (
             <span
               key={index}
-              className="bg-green-200 text-green-800 px-3 py-1 rounded-full text-sm select-none cursor-pointer flex items-center"
+              className="bg-green-200 text-green-800 px-3 py-1 rounded-full text-sm select-none cursor-pointer flex items-center transition-all"
             >
               {language}
               <button
-                className="ml-2 text-red-500 hover:text-red-700 text-1xl"
+                className="ml-2 text-red-500 hover:text-red-700 text-1xl transition-all"
                 onClick={() => handleDeleteLanguage(index)}
               >
                 &times; {/* This is the cross symbol */}
@@ -248,7 +248,7 @@ const LanguageSection = () => {
           className="p-2 w-full border rounded mb-2"
         />
         <button
-          className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600"
+          className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition-all"
           onClick={handleSaveLanguage}
         >
           Save Language

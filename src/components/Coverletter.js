@@ -72,7 +72,7 @@ const Coverletter = () => {
   };
 
   return (
-    <div className="max-w-lg rounded-[40px] overflow-hidden shadow-lg bg-teal-600 p-8 flex justify-between items-center flex-col mb-4 ml-3">
+    <div className="max-w-lg rounded-[40px] overflow-hidden shadow-lg bg-teal-600 p-8 flex justify-between items-center flex-col mb-4 ml-3 transition-all">
       <div className="flex items-center">
         <img src={coverletterImage} alt="Cover Letter Icon" className="w-24 mr-4" />
         <div>
@@ -84,13 +84,13 @@ const Coverletter = () => {
       </div>
       <div className="flex">
         <button
-          className="bg-yellow-400 hover:bg-blue-700 hover:text-white text-gray-800 font-semibold m-2 px-4 py-1 rounded-3xl border-none hover:drop-shadow-xl"
+          className="bg-yellow-400 hover:bg-blue-700 hover:text-white text-gray-800 font-semibold m-2 px-4 py-1 rounded-3xl border-none hover:drop-shadow-xl transition-all"
           onClick={() => setIsModalOpen(true)} // Open modal on click
         >
           Upload 
         </button>
         <button
-          className="bg-gray-900 hover:bg-gray-100 hover:text-gray-900 text-gray-200 font-semibold m-2 px-4 py-1 rounded-3xl border-none text-nowrap hover:drop-shadow-xl"
+          className="bg-gray-900 hover:bg-gray-100 hover:text-gray-900 text-gray-200 font-semibold m-2 px-4 py-1 rounded-3xl border-none text-nowrap hover:drop-shadow-xl transition-all"
           onClick={handleDownload} // Handle download
         >
           Download
