@@ -40,22 +40,22 @@ const Navbar = () => {
     delay: 50,
   }));
 
-  useEffect(() => {
-    const handleScroll = () => {
-      sections.forEach((section) => {
-        const element = document.getElementById(section.toLowerCase().replace(/\s+/g, '-'));
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 50 && rect.bottom >= 50) {
-            setActiveSection(section.toLowerCase().replace(/\s+/g, '-'));
-          }
-        }
-      });
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     sections.forEach((section) => {
+  //       const element = document.getElementById(section.toLowerCase().replace(/\s+/g, '-'));
+  //       if (element) {
+  //         const rect = element.getBoundingClientRect();
+  //         if (rect.top <= 50 && rect.bottom >= 50) {
+  //           setActiveSection(section.toLowerCase().replace(/\s+/g, '-'));
+  //         }
+  //       }
+  //     });
+  //   };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
 
   const handleClick = (section) => {
     const element = document.getElementById(section);
